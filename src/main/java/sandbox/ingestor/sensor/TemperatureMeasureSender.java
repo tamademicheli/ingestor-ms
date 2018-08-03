@@ -23,7 +23,7 @@ public class TemperatureMeasureSender {
 
 
     @Autowired
-    KafkaTemplate<String,String> kafkaTemplate;
+    KafkaTemplate<String,TemperatureMeasure> kafkaTemplate;
 
 
 
@@ -34,11 +34,11 @@ public class TemperatureMeasureSender {
 
         String temperatureJson = new Gson().toJson(temperatureMeasure);
 
-        ListenableFuture<SendResult<String, String>> send = kafkaTemplate.send(temperatureTopic, temperatureJson);
-        send.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
+        ListenableFuture<SendResult<String, TemperatureMeasure>> send = kafkaTemplate.send(temperatureTopic, temperatureMeasure);
+        send.addCallback(new ListenableFutureCallback<SendResult<String, TemperatureMeasure>>() {
 
             @Override
-            public void onSuccess(SendResult<String, String> result) {
+            public void onSuccess(SendResult<String, TemperatureMeasure> result) {
                    LOGGER.info("SUCCESS");
             }
 
