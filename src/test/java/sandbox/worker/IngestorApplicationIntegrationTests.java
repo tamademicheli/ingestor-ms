@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import sandbox.repositories.TemperatureMeasure;
-import sandbox.worker.temperature.TemperatureSender;
+import sandbox.ingestor.temperature.TemperatureSender;
 
 import java.time.LocalDateTime;
 import java.util.Random;

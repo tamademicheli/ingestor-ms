@@ -1,4 +1,4 @@
-package sandbox.worker.temperature;
+package sandbox.ingestor.temperature;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

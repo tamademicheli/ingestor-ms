@@ -1,4 +1,4 @@
-package sandbox.worker.temperature;
+package sandbox.ingestor.temperature;
 
 import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
 import org.springframework.context.annotation.Bean;
