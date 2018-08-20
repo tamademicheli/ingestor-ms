@@ -1,18 +1,19 @@
-package sandbox.ingestor.sensor;
+package sandbox.worker.temperature;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import sandbox.repositories.TemperatureMeasure;
 
 import javax.ws.rs.core.Response;
 
 @RestController
-public class IngestSensorDataRestController {
+public class TemperatureIngestorRest {
 
 
     @Autowired
-    TemperatureMeasureSender sender;
+    TemperatureSender sender;
 
 
     @PostMapping(path = "/tempmeasure")
