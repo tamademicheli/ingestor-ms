@@ -1,0 +1,12 @@
+{
+  "measureTime": {
+    "hour": 13,
+    "minute": 14,
+    "second": 39,
+    "nano": 49000000
+  },
+  "latitude": "47.388468",
+  "longitude": "8.521560",
+  "deviceId": "bosch-heinrichstrasse-x123",
+  "celsius": 0.0
+}

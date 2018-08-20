@@ -3,6 +3,7 @@ package sandbox.worker.temperature;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import sandbox.repositories.TemperatureMeasure;
 
@@ -17,7 +18,7 @@ public class TemperatureIngestorRest {
 
 
     @PostMapping(path = "/tempmeasure")
-    public Response ingestTemperature(TemperatureMeasure measure) {
+    public Response ingestTemperature(@RequestBody TemperatureMeasure measure) {
 
         sender.send(measure);
 

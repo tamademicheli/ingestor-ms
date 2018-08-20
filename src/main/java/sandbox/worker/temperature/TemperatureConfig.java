@@ -11,6 +11,7 @@ import org.springframework.jms.support.converter.MessageType;
 
 import javax.jms.ConnectionFactory;
 
+//TODO create a module called JMS Config,...
 @Configuration
 public class TemperatureConfig {
 
