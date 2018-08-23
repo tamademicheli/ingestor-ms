@@ -5,14 +5,18 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import sandbox.ingestor.IngestorApplication;
 import sandbox.repositories.TemperatureMeasure;
 import sandbox.ingestor.temperature.TemperatureSender;
 
 import java.time.LocalDateTime;
+import java.util.Random;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = IngestorApplication.class)
 public class TemperatureSenderTest {
 
 	@Autowired
@@ -25,8 +29,7 @@ public class TemperatureSenderTest {
 		TemperatureMeasure temperatureMeasure = new TemperatureMeasure();
 		temperatureMeasure.setDeviceId("bosch-heinrichstrasse-x123");
 		temperatureMeasure.setMeasureTime(LocalDateTime.now());
-		temperatureMeasure.setLatitude("47.388468");
-		temperatureMeasure.setLongitude("8.521560");
+		temperatureMeasure.setLocation( new Random().nextDouble(), new Random().nextDouble());
 
 
 
@@ -34,4 +37,9 @@ public class TemperatureSenderTest {
 
 	}
 
+
+	@Test
+	public void name() {
+
+	}
 }
