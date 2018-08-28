@@ -1,18 +1,10 @@
 {
-  "id": "a9a05c53-7a38-4fc8-b9cc-0dcb4aaf0b88",
-  "measureTime": [
-    2018,
-    8,
-    22,
-    10,
-    29,
-    17,
-    237000000
-  ],
+  "id": "${= UUID.randomUUID().toString()}",
+  "measureTime": "${= (new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSS"))}" ,
   "location": {
-    "lat": 0.833138641510146,
-    "lon": 0.7525247256522508
+    "lat": "${= (new Random().nextDouble() * 2 - 1 ) * 90}" ,
+    "lon": "${= (new Random().nextDouble() * 2 - 1 ) * 180}"
   },
   "deviceId": "bosch-heinrichstrasse-x123",
-  "celsius": 0.7334252416872403
+  "celsius": "${= (new Random().nextDouble() * 2 - 1 ) * 40}"
 }

@@ -28,7 +28,15 @@
 
 
 
+
     <dependencies>
+
+        <dependency>
+            <groupId>sandbox</groupId>
+            <artifactId>measure-msm</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+
+        </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -62,11 +70,7 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>sandbox</groupId>
-            <artifactId>measure-msm</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -115,36 +119,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <useBaseVersion>false</useBaseVersion>
-                    <overWriteReleases>false</overWriteReleases>
-                    <overWriteSnapshots>true</overWriteSnapshots>
-                    <includeScope>runtime</includeScope>
-                    <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <addMavenDescriptor>true</addMavenDescriptor>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                        </manifest>
-                    </archive>
-                </configuration>
             </plugin>
         </plugins>
     </build>
